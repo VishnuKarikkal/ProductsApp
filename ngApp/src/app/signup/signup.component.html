@@ -1,0 +1,56 @@
+<div class="container" style="border:1px solid grey;border-radius: 15px;margin-top: 10px;">
+    <h2 style="text-align: center;color: blue;">Signup</h2>
+
+    <form (ngSubmit)="signup()" [formGroup]="signupform">
+        <div class="container" style="margin: 0 auto;text-align: center;">
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="">Username:</label><br>
+                    <input type="text" formControlName="username" [(ngModel)]="userData.username" 
+                            [class.is-invalid]="signupform.get('username').invalid && signupform.get('username').touched"
+                    name="username" id="username" required>
+                    <div *ngIf="signupform.get('username').invalid && signupform.get('username').touched ">
+                        <small *ngIf="signupform.get('username').errors?.pattern" class="text-danger">numbers and special characters are not allowed</small>
+                    </div>
+                </div>
+                
+            </div>
+           
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="">Password:</label><br>
+                    <input type="password" formControlName="password" [(ngModel)]="userData.password" 
+                            [class.is-invalid]="signupform.get('password').invalid && signupform.get('password').touched"
+                    name="password" id="password" required>
+                    
+                    <div *ngIf="signupform.get('password').invalid && signupform.get('password').touched ">
+                        <small *ngIf="signupform.get('password').errors?.minlength" class="text-danger">Minimum Length Is 8 Characters</small><br>
+                        <small *ngIf="signupform.get('password').errors?.pattern" class="text-danger">Password Contains numbers,special characters(!@#$%) and both uppercase and lowercase letters</small>
+                    </div>
+                </div>          
+            </div>
+            <div style="margin: 0 auto;">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="custom-radio">
+                            <input class="form-check-input" type="radio" name="userType" id="radioAdmin" value="admin"> 
+                            <label class="form-check-label" for="radioAdmin">Admin</label>
+                        </div> 
+                    </div>
+                        <div class="row">
+                            <div class="custom-radio">
+                                <input class="form-check-input" type="radio" name="userType" id="radioNormal" value="visitor" checked>
+                                <label class="form-check-label" for="radioNormal">Visitor</label>
+                                </div>
+                        </div> 
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-md-12">
+                   <button class="btn btn-warning" [disabled]="signupform.invalid" type="submit">Submit</button>
+                </div>          
+            </div>
+        </div>
+    </form>
+</div>

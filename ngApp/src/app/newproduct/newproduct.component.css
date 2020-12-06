@@ -1,0 +1,31 @@
+form
+{
+    font-family: 'Baloo 2', cursive;
+
+    border: 1px solid gray;
+    color: violet;
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 50vw;
+}
+img
+{
+    border: 1px dotted rebeccapurple;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+label
+{
+    color: violet;
+}
+button
+{
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+    
+}
+button:hover
+{
+    background-color: blueviolet;
+}

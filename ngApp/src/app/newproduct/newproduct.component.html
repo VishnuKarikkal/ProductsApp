@@ -1,0 +1,69 @@
+<div class="card">
+    <form (ngSubmit)="addProduct()" [formGroup]="newProductForm">
+        <div class="card-header">
+           <h1 style="text-align: center;color: blue;">{{title}}</h1> 
+        </div> 
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <label>Product Name</label>
+                        </td>
+                        <td>
+                              <input type="text" name="p_name" [(ngModel)]="productItem['name']" 
+                              placeholder="product name" value="product name" required
+                              formControlName="p_name" 
+                            [class.is-invalid]="newProductForm.get('p_name').invalid && newProductForm.get('p_name').touched">
+                            <div *ngIf="newProductForm.get('p_name').invalid && newProductForm.get('p_name').touched ">
+                                <small *ngIf="newProductForm.get('p_name').errors?.required" class="text-danger">Enter Product Name!</small>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Product Description</label>
+                        </td>
+                        <td>
+                            <input type="text" name="p_description" [(ngModel)]="productItem['description']" 
+                            placeholder="product description" value="description" required
+                            formControlName="p_description" 
+                            [class.is-invalid]="newProductForm.get('p_description').invalid && newProductForm.get('p_description').touched">
+                            <div *ngIf="newProductForm.get('p_description').invalid && newProductForm.get('p_description').touched ">
+                                <small *ngIf="newProductForm.get('p_description').errors?.required" class="text-danger">Enter Product Description!</small>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label>Product Image</label>
+                        </td>
+                        <td>
+                            <input type="file" id="p_image" name="p_image" [(ngModel)]="productItem['image']" 
+                            accept="image/*" (change)="showFiles()" required
+                            placeholder="choose Image" formControlName="p_image" 
+                            [class.is-invalid]="newProductForm.get('p_image').invalid && newProductForm.get('p_image').touched">
+                            <div *ngIf="newProductForm.get('p_image').invalid && newProductForm.get('p_image').touched ">
+                                <small *ngIf="newProductForm.get('p_image').errors?.required" class="text-danger">Please Choose Product Image!</small>
+                            </div>
+                           
+                            <div class="col-sm-5">
+                                <!-- sample image loaded initially from assets -->
+                                <img id="preview" src="../../assets/img/sample.jpg"  balt="up-img" width="280" height="280">
+                            </div>
+                        
+                        </td>
+                    </tr>
+                </table>
+                
+            </div>
+            
+        </div>
+       <div class="container" style="width: fit-content;">
+        <div style="margin: 0 auto;">
+            <button class="btn btn-primary" type="submit" [disabled]="newProductForm.invalid">Add To the List!</button>
+        </div>
+       </div>
+    </form>
+</div>

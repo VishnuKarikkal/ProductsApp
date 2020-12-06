@@ -1,0 +1,43 @@
+<div class="card">
+    <div class="card-header">
+       <h1 style="text-align: center;color: blue;">{{title}}</h1> 
+    </div>
+    <div  class="card-body">
+        <!-- if no product available -->
+        <div *ngIf="!available" class="alert alert-warning alert-dismissible fade show" role="alert">
+             Nothing to show Here!! &nbsp;<strong> What About Adding some Products ?! </strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!-- if products are available -->
+        <div *ngIf="available" class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Product
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+                <tr *ngFor="let product of products">
+                    <td>
+                        <img [src]="product.image" alt="product-image" [title]="product.name" width="50px" style="margin: 2px;">
+                    </td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.description}}</td>
+                    <td>
+                        <Button class="btn btn-danger" (click)="deleteProduct(product._id)">Delete</Button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
