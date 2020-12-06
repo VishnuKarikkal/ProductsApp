@@ -2,7 +2,9 @@
 
 ---------------------------------------------------
 frontend : angular 10
+
 backend : nodejs - express
+
 database : mongodb Atlas : <cloud>
 ---------------------------------------------------
 
