@@ -10,7 +10,9 @@ database : mongodb Atlas : cloud
 ---------------------------------------------------
 
 ---------------------------------------------------
+
 APIs ***:
+---------
 
 signup - http://localhost:3000/auth/signupUser       (for saving valid user data to the db)
 
@@ -27,11 +29,13 @@ deleteProduct -  http://localhost:3000/product/deleteProduct    (for deleting a 
 -----------------------------------------------------
 
 -----------------------------------------------------
+
 backend main         : app.js
 
 image uploads folder : server/public/uploads
 
 frontend form validations using : REACTIVE FORMS METHOD
+
 -----------------------------------------------------
 
 -----------------------------------------------------
@@ -68,9 +72,10 @@ additional middlewares   :
 
 !! 'password' must contain atleast 8 characters including atleast 1 uppercase letter,
     1 lowercase letter, 1 number and any special character among !@#$% and no blank spaces are allowed
+    
 -----------------------------------------------------
 
 
 -----------------------------------------------------
-*********************🙂THANK YOU🙂******************
+********************* 🙂THANK YOU🙂 ****************
 -----------------------------------------------------
