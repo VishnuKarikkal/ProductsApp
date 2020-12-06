@@ -35,18 +35,30 @@ frontend form validations using : REACTIVE FORMS METHOD
 
 -----------------------------------------------------
 base packages            :
+
                             express
+                            
                             body-parser
+                            
                             mongoose
+                            
                             cors
+                            
 additional packages      :
+
                             jsonwebtoken : for creating token
+                            
                             bcrypt       : for hashing passwords
+                            
                             multer       : for file processing at server
+                            
 
 additional middlewares   :
+
                             helpers.js   :  for validating the file received at backend
+                            
                             verifyToken  :  for verifying the token in the request
+                            
 -----------------------------------------------------
 
 -----------------------------------------------------
