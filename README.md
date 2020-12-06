@@ -27,7 +27,7 @@ addNewProduct -  http://localhost:3000/product/addNew   (for adding new product)
 deleteProduct -  http://localhost:3000/product/deleteProduct    (for deleting a product)
 
 
-***imp server default PORT : 3000
+*** server default PORT : 3000
 -----------------------------------------------------
 
 -----------------------------------------------------
