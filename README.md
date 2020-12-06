@@ -10,10 +10,13 @@ database : mongodb Atlas : <cloud>
 APIs ***:
 
 signup - http://localhost:3000/auth/signupUser       (for saving valid user data to the db)
+
 login  - http://localhost:3000/auth/loginCheck      (for checking validity of login credentials)
 
 products - http://localhost:3000/product/products   (for getting all products)
+
 addNewProduct -  http://localhost:3000/product/addNew   (for adding new product)
+
 deleteProduct -  http://localhost:3000/product/deleteProduct    (for deleting a product)
 
 
@@ -22,7 +25,10 @@ deleteProduct -  http://localhost:3000/product/deleteProduct    (for deleting a 
 
 -----------------------------------------------------
 backend main         : app.js
+
 image uploads folder : server/public/uploads
+
+frontend form validations using : REACTIVE FORMS METHOD
 -----------------------------------------------------
 
 -----------------------------------------------------
@@ -44,6 +50,7 @@ additional middlewares   :
 -----------------------------------------------------
 *****************************************************
 !! email is accepted as 'username'
+
 !! 'password' must contain atleast 8 characters including atleast 1 uppercase letter,
     1 lowercase letter, 1 number and any special character among !@#$% and no blank spaces are allowed
 -----------------------------------------------------
