@@ -37,4 +37,19 @@ img
     background-color: yellowgreen;
     color: red;
 }
+.search-bar
+{
+    background-color: brown;
+    border-radius: 10px;
+}
 
+.search-results .card
+{
+    margin: 5px auto;
+}
+
+.form-inline p
+{
+    margin-left: 10px;
+    color: white;
+}

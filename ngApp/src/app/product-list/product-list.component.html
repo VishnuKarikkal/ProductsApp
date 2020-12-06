@@ -11,6 +11,31 @@
            </button>
          </div>
          <!-- if available -->
+<!-- search bar -->
+<div class="container">
+    <nav *ngIf="available" class="navbar search-bar">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" id="search-input" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="search()">Search</button>
+          <p *ngIf="!result" class="card-text"> No Results. Please Redefine Search Term</p>
+        </form>
+      </nav>
+      <div class="search-results container text-center" *ngIf="result">
+          <h4>Search Results</h4>
+          
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src={{results[0].image}} alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{results[0].name}}</h5>
+              <p class="card-text">{{results[0].description}}</p>
+            </div>
+          </div>
+      </div>
+</div>
+
+<!-- search bar end -->
+
+
         <div *ngIf="available" class="table-responsive">
             <table class="table">
                 <tr>
@@ -22,6 +47,10 @@
                     </th>
                     <th>
                         Description
+                    </th>
+                    <th>    
+                        <!-- sort functionality -->
+                        <a href="#" (click)="sortProducts()">SORT</a>
                     </th>
                 </tr>
                 <!-- loading products data -->
