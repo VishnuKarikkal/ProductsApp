@@ -75,6 +75,9 @@ additional middlewares   :
 !! 'password' must contain atleast 8 characters including atleast 1 uppercase letter,
     1 lowercase letter, 1 number and any special character among !@#$% and no blank spaces are allowed
     
+!!  frontend and backend seperated into 2 different folders : ngApp + server
+--------------
+    
 -----------------------------------------------------
 
 
