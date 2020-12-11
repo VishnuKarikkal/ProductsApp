@@ -16,15 +16,15 @@ database : mongodb Atlas : cloud
 APIs ***:
 ---------
 
-signup - http://localhost:3000/auth/signupUser       (for saving valid user data to the db)
+signup         -  http://localhost:3000/auth/signupUser           (for saving valid user data to the db)
 
-login  - http://localhost:3000/auth/loginCheck      (for checking validity of login credentials)
+login          -  http://localhost:3000/auth/loginCheck           (for checking validity of login credentials)
 
-products - http://localhost:3000/product/products   (for getting all products)
+products       -  http://localhost:3000/product/products          (for getting all products)
 
-addNewProduct -  http://localhost:3000/product/addNew   (for adding new product)
+addNewProduct  -  http://localhost:3000/product/addNew            (for adding new product)
 
-deleteProduct -  http://localhost:3000/product/deleteProduct    (for deleting a product)
+deleteProduct  -  http://localhost:3000/product/deleteProduct     (for deleting a product)
 
 
 *** server default PORT : 3000
