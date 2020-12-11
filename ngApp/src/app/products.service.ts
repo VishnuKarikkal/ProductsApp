@@ -18,7 +18,11 @@ private _deleteProductUrl='http://localhost:3000/product/deleteProduct';
   //for adding products
   addProducts(item)
   {
-    return this.http.post(this._newProductUrl,item)
+    return this.http.post(this._newProductUrl,item,
+                                                  {
+                                                    reportProgress: true,
+                                                    observe: 'events'
+                                                  });
   }
   //for deleting products
   deleteProduct(id)

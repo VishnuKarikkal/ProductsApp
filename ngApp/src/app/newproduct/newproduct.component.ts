@@ -4,7 +4,7 @@ import {ReactiveFormsModule,FormBuilder,Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import { from } from 'rxjs';
 import {ProductModel} from '../product-list/productmodel';
-import {HttpErrorResponse} from '@angular/common/http';
+import {HttpErrorResponse, HttpEvent, HttpEventType} from '@angular/common/http';
 
 @Component({
   selector: 'app-newproduct',
@@ -16,6 +16,7 @@ export class NewproductComponent implements OnInit {
 title="Add New Product";
   constructor(private _productsService:ProductsService,private router:Router,private formBuilder:FormBuilder) { }
   productItem=new ProductModel(null,null,null);
+  percentDone =<any> 0;
   newProductForm= this.formBuilder.group
   ({
     p_image:['',Validators.required],
@@ -36,17 +37,34 @@ addProduct()
   formData.append('p_name',this.productItem.name);
   //connecting to backend
   this._productsService.addProducts(formData)
-  .subscribe((res)=>
+  .subscribe((res:HttpEvent<any>)=>
                        {
-                          if(res['msg'] == 'saved')
-                          {
-                              alert("product uploaded!!!");
-                              this.router.navigate(['/']);
-                          }
-                          else
-                          {
-                            alert(res['msg']);
-                          }
+                        switch (res.type) //tracking the upload progress
+                        {
+                          case HttpEventType.Sent:
+                            console.log('Request has been made!');
+                            break;
+                          case HttpEventType.ResponseHeader:
+                            console.log('Response header has been received!');
+                            break;
+                          case HttpEventType.UploadProgress:
+                            this.percentDone = Math.round(res.loaded / res.total * 100);
+                            console.log(`Uploaded: ${this.percentDone}%`);
+                            break;
+                          case HttpEventType.Response:
+                            this.percentDone = false;
+                            if(res.body['msg'] == 'saved')
+                            {
+                                alert("product uploaded!!!");
+                                this.router.navigate(['/']);
+                            }
+                            else
+                            {
+                              alert(res.body['msg']);
+                            }
+                        }
+
+                         
                         })
 }
 
